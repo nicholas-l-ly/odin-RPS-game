@@ -138,5 +138,5 @@ game();
 
 
 
-
+// can refactor later to make things cleaner and less reptitive 
 
