@@ -138,7 +138,7 @@ function game (){
 
 
 
-// can refactor later to make things cleaner and less reptitive 
+// can refacto later to make things cleaner and less reptitive 
 
 // Below will be code to practice DOM manipulation and events, to be transferred to a separate file later.
 
@@ -146,39 +146,39 @@ function game (){
 
 
 
-const container = document.querySelector('#container');
-// a <p> with red text that says “Hey I’m red!”
-const paragraph = document.createElement('p');
-paragraph.textContent = "Hello World!";
-paragraph.style.color = 'red'
-container.appendChild(paragraph);
+// const container = document.querySelector('#container');
+// // a <p> with red text that says “Hey I’m red!”
+// const paragraph = document.createElement('p');
+// paragraph.textContent = "Hello World!";
+// paragraph.style.color = 'red'
+// container.appendChild(paragraph);
 
-// an <h3> with blue text that says “I’m a blue h3!”
-const header3 = document.createElement('h3');
-header3.style.color = 'blue';
-header3.textContent = "I'm a blue h3!"
-container.appendChild(header3);
+// // an <h3> with blue text that says “I’m a blue h3!”
+// const header3 = document.createElement('h3');
+// header3.style.color = 'blue';
+// header3.textContent = "I'm a blue h3!"
+// container.appendChild(header3);
 
-// a <div> with a black border and pink background color with the following elements inside of it:
-const div = document.createElement('div');
-div.style.backgroundColor = 'pink'
-div.style.borderColor = 'black'
+// // a <div> with a black border and pink background color with the following elements inside of it:
+// const div = document.createElement('div');
+// div.style.backgroundColor = 'pink'
+// div.style.borderColor = 'black'
 
-// another <h1> that says “I’m in a div”
-const header1 = document.createElement('h1');
-header1.textContent = " I'm in a div";
-div.appendChild(header1)
-// a <p> that says “ME TOO!”
-paragraphTwo = document.createElement('p');
-paragraphTwo.textContent = "ME TOO!";
-div.appendChild(paragraphTwo);
+// // another <h1> that says “I’m in a div”
+// const header1 = document.createElement('h1');
+// header1.textContent = " I'm in a div";
+// div.appendChild(header1)
+// // a <p> that says “ME TOO!”
+// paragraphTwo = document.createElement('p');
+// paragraphTwo.textContent = "ME TOO!";
+// div.appendChild(paragraphTwo);
 
-// Hint for this one: after creating the <div> with createElement, append the <h1> and <p> to it before adding it to the container.
+// // Hint for this one: after creating the <div> with createElement, append the <h1> and <p> to it before adding it to the container.
 
-container.appendChild(div);
+// container.appendChild(div);
 
 
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', function (e) {
-    e.target.style.background = 'blue';
-  });
+// const btn = document.querySelector('#btn');
+// btn.addEventListener('click', function (e) {
+//     e.target.style.background = 'blue';
+//   });
