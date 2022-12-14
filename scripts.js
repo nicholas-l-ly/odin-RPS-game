@@ -1,5 +1,15 @@
 // this is the code for our rock paper scissors game
 // declare a function that will get computer choice for rock paper scissor
+let playerScore = 0;
+let computerScore = 0;
+
+
+const player = document.querySelector("#player-score");
+player.textContent = `Player Score: ${playerScore}`;
+
+const computer = document.querySelector("#comp-score");
+computer.textContent = `Computer Score: ${computerScore}`;
+
 function getComputerChoice() {
     let max = 3; // this is the most amount of choices we can have 
     let choice;
@@ -18,18 +28,23 @@ function getComputerChoice() {
     return choice;
 }
 
-// delcare a function that will ask player to make a selection
-function getplayerChoice() {
-    // ask for user input 
-    let choice = prompt("Please type in a choice: rock, paper, or scissor?");
-       // correct the input to all lower case no spaces
-    choice = choice.toLowerCase();
- 
-    return choice;
-}
 // declare a function playRound that takes a players choice and computer choice and outputs a winner
 // inputs: player and computer selections
-function playRound (playerSelection,computerSelection){
+const btn = document.querySelector('.selections');
+btn.addEventListener('click', e => {
+    let target = e.target;
+
+    console.log('winner: '+ playRound(target.innerHTML))
+});
+
+
+function playRound (playerSelection){
+    // generate player selection
+    console.log("player: "+ playerSelection)
+
+    // generate computer slection
+    computerSelection = getComputerChoice();
+    console.log("comp: " + computerSelection)
     // declare a variable to store the winner and loser
     let winner;
     let loser;
@@ -83,18 +98,28 @@ function playRound (playerSelection,computerSelection){
                     loser = "Tie";
             }
         }
-    //create conditional to declare winner 
-    // output: string with winner
-    // if (winner === "Tie" && loser === "Tie") {
-    //     return console.log("We have a tie!")
-    // } else {
-    //     return console.log("Winner is: " + winner + " Loser is: " +loser);
-    // }
 
-    //refactor the return to return the winner
+        if (winner === 'Player'){
+            playerScore++;
+            console.log('player wins! player score: ' + playerScore + ' comp score: ' +computerScore)
+        }
+        if (winner === 'Computer'){
+            computerScore++;
+            console.log('computer wins! computer score: ' + computerScore + ' player score: ' + playerScore)
+            
+        }
+
+    player.textContent = `Player Score: ${playerScore}`;
+    computer.textContent = `Computer Score: ${computerScore}`;  
     return winner
     
 }
+
+
+
+
+
+
 
 
 // declare a variable that stored the computer selection
@@ -139,9 +164,7 @@ function game (){
 
 
 // can refacto later to make things cleaner and less reptitive 
-
 // Below will be code to practice DOM manipulation and events, to be transferred to a separate file later.
-
 // Add the following elements to the container using ONLY JavaScript and the DOM methods shown above.
 
 
@@ -160,9 +183,7 @@ function game (){
 // container.appendChild(header3);
 
 // // a <div> with a black border and pink background color with the following elements inside of it:
-// const div = document.createElement('div');
-// div.style.backgroundColor = 'pink'
-// div.style.borderColor = 'black'
+
 
 // // another <h1> that says “I’m in a div”
 // const header1 = document.createElement('h1');
@@ -178,7 +199,3 @@ function game (){
 // container.appendChild(div);
 
 
-// const btn = document.querySelector('#btn');
-// btn.addEventListener('click', function (e) {
-//     e.target.style.background = 'blue';
-//   });
